@@ -28,7 +28,7 @@ const platformGradient: Record<SocialPlatform, string> = {
 
 export function ContactSection() {
   const contactContent = useData<ContactContent>("/api/contact", contactFallback);
-  const { sectionTitle, subtitle, email, cvPath, bookMeetingUrl, socials, footerText } = contactContent;
+  const { sectionTitle, subtitle, email, cvPath, bookMeetingUrl, socials } = contactContent;
 
   return (
     <section id="contact" className="py-20 lg:py-32 relative overflow-hidden bg-gradient-to-b from-black via-gray-900 to-black">
@@ -109,9 +109,7 @@ export function ContactSection() {
               <span>Download CV</span>
             </a>
             <a
-              href={bookMeetingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:arnab.prof.work@gmail.com"
               className="px-8 py-4 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/20 text-white font-bold text-lg hover:bg-white/20 hover:border-white/30 transition-all duration-300 hover:scale-105 flex items-center space-x-2"
             >
               <Mail className="w-5 h-5" />
@@ -127,9 +125,9 @@ export function ContactSection() {
           transition={{ delay: 0.6 }}
           className="mt-20 pt-8 border-t border-gray-800 text-center"
         >
-          <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} {footerText}
-          </p>
+            <p className="text-gray-500 text-sm">
+              <span>© 2026 Arnab Samadder. Built with Next.js & Tailwind CSS. Developed by <a href="https://github.com/Grb-47" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-500">Gourab Mondal</a>.</span>
+            </p>
         </motion.div>
       </div>
     </section>

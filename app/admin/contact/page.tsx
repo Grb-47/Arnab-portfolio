@@ -16,7 +16,6 @@ interface ContactData {
   cvPath: string;
   bookMeetingUrl: string;
   socials: SocialLink[];
-  footerText: string;
 }
 
 export default function AdminContact() {
@@ -66,7 +65,6 @@ export default function AdminContact() {
         <Field label="Email" val={data.email} onChange={(v) => setData({ ...data, email: v })} />
         <Field label="CV Path" val={data.cvPath} onChange={(v) => setData({ ...data, cvPath: v })} />
         <Field label="Book Meeting URL" val={data.bookMeetingUrl} onChange={(v) => setData({ ...data, bookMeetingUrl: v })} />
-        <Field label="Footer Text" val={data.footerText} onChange={(v) => setData({ ...data, footerText: v })} />
 
         <div>
           <label className="block text-sm text-gray-400 mb-1">Social Links</label>
