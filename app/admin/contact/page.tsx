@@ -12,7 +12,6 @@ interface SocialLink {
 interface ContactData {
   sectionTitle: string;
   subtitle: string;
-  email: string;
   cvPath: string;
   bookMeetingUrl: string;
   socials: SocialLink[];
@@ -62,7 +61,6 @@ export default function AdminContact() {
       <div className="space-y-4">
         <Field label="Section Title" val={data.sectionTitle} onChange={(v) => setData({ ...data, sectionTitle: v })} />
         <Field label="Subtitle" val={data.subtitle} onChange={(v) => setData({ ...data, subtitle: v })} />
-        <Field label="Email" val={data.email} onChange={(v) => setData({ ...data, email: v })} />
         <Field label="CV Path" val={data.cvPath} onChange={(v) => setData({ ...data, cvPath: v })} />
         <Field label="Book Meeting URL" val={data.bookMeetingUrl} onChange={(v) => setData({ ...data, bookMeetingUrl: v })} />
 
