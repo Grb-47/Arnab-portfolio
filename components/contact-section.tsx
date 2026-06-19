@@ -109,7 +109,7 @@ export function ContactSection() {
               <span>Download CV</span>
             </a>
             <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=arnab.prof.work@gmail.com"
+              href={bookMeetingUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/20 text-white font-bold text-lg hover:bg-white/20 hover:border-white/30 transition-all duration-300 hover:scale-105 flex items-center space-x-2"
