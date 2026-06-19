@@ -128,7 +128,7 @@ export function ContactSection() {
           className="mt-20 pt-8 border-t border-gray-800 text-center"
         >
             <p className="text-gray-500 text-sm">
-              <span>© 2026 Arnab Samadder. Built with Next.js & Tailwind CSS. Developed by <a href="https://github.com/Grb-47" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-500">Gourab Mondal</a>.</span>
+              <span>© 2026 Arnab Samadder. Built with Next.js & Tailwind CSS. Developed by <a href="https://github.com/Grb-47" target="_blank" rel="noopener noreferrer" className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 animate-gradient hover:scale-105 inline-block transition-transform duration-300">Gourab Mondal</a>.</span>
             </p>
         </motion.div>
       </div>
