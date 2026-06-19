@@ -89,7 +89,7 @@ export function HeroSection() {
         >
           <TextGenerateEffect
             words={subtitle}
-            className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 font-medium"
+            className="text-sm sm:text-lg md:text-2xl lg:text-3xl text-gray-300 font-medium"
           />
           </motion.div>
 
