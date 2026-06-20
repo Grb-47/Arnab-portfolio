@@ -85,7 +85,7 @@ export function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="max-w-4xl px-4"
+          className="w-full px-4 lg:max-w-4xl"
         >
           <TextGenerateEffect
             words={subtitle}
