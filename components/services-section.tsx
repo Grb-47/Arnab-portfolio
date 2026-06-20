@@ -24,11 +24,21 @@ export function ServicesSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scrollLeft = () => {
-    scrollRef.current?.scrollBy({ left: -380, behavior: "smooth" });
+    const el = scrollRef.current;
+    if (!el) return;
+    const card = el.children[0] as HTMLElement | undefined;
+    if (!card) return;
+    const gap = parseFloat(getComputedStyle(el).gap) || 0;
+    el.scrollBy({ left: -(card.offsetWidth + gap), behavior: "smooth" });
   };
 
   const scrollRight = () => {
-    scrollRef.current?.scrollBy({ left: 380, behavior: "smooth" });
+    const el = scrollRef.current;
+    if (!el) return;
+    const card = el.children[0] as HTMLElement | undefined;
+    if (!card) return;
+    const gap = parseFloat(getComputedStyle(el).gap) || 0;
+    el.scrollBy({ left: card.offsetWidth + gap, behavior: "smooth" });
   };
 
   return (
@@ -87,7 +97,7 @@ export function ServicesSection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="min-w-[320px] md:min-w-[350px] shrink-0 bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
+                    className="min-w-[320px] md:min-w-[350px] shrink-0 lg:min-w-0 lg:w-[calc(33.333%-1.334rem)] bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
                   >
                     <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
                       <ImageWithFallback src={service.image} alt={service.title} fill className="object-cover" />

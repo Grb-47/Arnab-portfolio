@@ -15,11 +15,21 @@ export function BlogsSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scrollLeft = () => {
-    scrollRef.current?.scrollBy({ left: -380, behavior: "smooth" });
+    const el = scrollRef.current;
+    if (!el) return;
+    const card = el.children[0] as HTMLElement | undefined;
+    if (!card) return;
+    const gap = parseFloat(getComputedStyle(el).gap) || 0;
+    el.scrollBy({ left: -(card.offsetWidth + gap), behavior: "smooth" });
   };
 
   const scrollRight = () => {
-    scrollRef.current?.scrollBy({ left: 380, behavior: "smooth" });
+    const el = scrollRef.current;
+    if (!el) return;
+    const card = el.children[0] as HTMLElement | undefined;
+    if (!card) return;
+    const gap = parseFloat(getComputedStyle(el).gap) || 0;
+    el.scrollBy({ left: card.offsetWidth + gap, behavior: "smooth" });
   };
 
   return (
@@ -56,7 +66,7 @@ export function BlogsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="w-[320px] md:w-[350px] flex-none shrink-0 group/card bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
+                className="w-[320px] md:w-[350px] flex-none shrink-0 lg:min-w-0 lg:w-[calc(33.333%-1rem)] group/card bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
               >
                 <div className="relative h-48 overflow-hidden">
                   <ImageWithFallback src={post.image} alt={post.title} fill className="object-cover group-hover/card:scale-110 transition-transform duration-500" />

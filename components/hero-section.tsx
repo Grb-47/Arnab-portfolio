@@ -98,22 +98,13 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8"
+            className="mt-8 flex justify-center"
           >
-            <a
-              href={siteLinks.cvUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold text-base shadow-lg hover:shadow-xl hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105 flex items-center space-x-2"
-            >
-              <Download className="w-5 h-5" />
-              <span>Download CV</span>
-            </a>
             <a
               href={siteLinks.bookMeetingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full bg-white/10 backdrop-blur-sm border-2 border-white/20 text-white font-bold text-base hover:bg-white/20 hover:border-white/30 transition-all duration-300 hover:scale-105 flex items-center space-x-2"
+              className="px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 via-blue-800 to-blue-500 animate-gradient background-size-[200%_auto] border-0 text-white font-bold text-base hover:scale-105 transition-all duration-300 flex items-center space-x-2"
             >
               <Calendar className="w-5 h-5" />
               <span>Book a Meeting</span>

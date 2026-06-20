@@ -21,11 +21,15 @@ export default function AdminProjects() {
   const router = useRouter();
   const [data, setData] = useState<ProjectsData | null>(null);
   const [saving, setSaving] = useState(false);
+  const [rawTagInputs, setRawTagInputs] = useState<string[]>([]);
 
   useEffect(() => {
     fetch("/api/projects")
       .then((r) => r.json())
-      .then(setData);
+      .then((d) => {
+        setData(d);
+        setRawTagInputs(d.items.map((item: ProjectItem) => item.tags.join(", ")));
+      });
   }, []);
 
   const save = async () => {
@@ -76,7 +80,19 @@ export default function AdminProjects() {
             <label className="block text-sm text-gray-400 mb-1">Full Description</label>
             <textarea className="w-full px-3 py-1.5 rounded bg-gray-800 border border-gray-700 text-white h-24" value={item.description} onChange={(e) => updateItem(i, "description", e.target.value)} />
           </div>
-          <Field label="Tags (comma-separated)" val={item.tags.join(", ")} onChange={(v) => updateTags(i, v)} />
+          <div className="mb-2">
+            <label className="block text-sm text-gray-400 mb-1">Tags (comma-separated)</label>
+            <input
+              className="w-full px-3 py-1.5 rounded bg-gray-800 border border-gray-700 text-white"
+              value={rawTagInputs[i] || ""}
+              onChange={(e) => {
+                const next = [...rawTagInputs];
+                next[i] = e.target.value;
+                setRawTagInputs(next);
+              }}
+              onBlur={() => updateTags(i, rawTagInputs[i])}
+            />
+          </div>
         </div>
       ))}
       <button onClick={addItem} className="text-blue-400 text-sm mt-2">+ Add Project</button>
