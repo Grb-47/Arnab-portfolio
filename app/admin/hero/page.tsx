@@ -49,7 +49,7 @@ export default function AdminHero() {
   };
 
   const addLogo = () => {
-    setData({ ...data, logos: [...data.logos, { src: "", alt: "" }] });
+    setData({ ...data, logos: [{ src: "", alt: "" }, ...data.logos] });
   };
 
   const removeLogo = (i: number) => {

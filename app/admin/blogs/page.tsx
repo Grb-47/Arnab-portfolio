@@ -48,7 +48,7 @@ export default function AdminBlogs() {
   };
 
   const addPost = () => {
-    setData({ ...data, posts: [...data.posts, { image: "", thumbnail: "", category: "", title: "", shortDescription: "", description: "" }] });
+    setData({ ...data, posts: [{ image: "", thumbnail: "", category: "", title: "", shortDescription: "", description: "" }, ...data.posts] });
   };
 
   const removePost = (i: number) => {

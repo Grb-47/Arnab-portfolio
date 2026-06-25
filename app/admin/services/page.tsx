@@ -51,7 +51,7 @@ export default function AdminServices() {
   };
 
   const addItem = (cat: typeof categories[number]) => {
-    setData({ ...data, [cat]: [...data[cat], { title: "", description: "", link: "", image: "" }] });
+    setData({ ...data, [cat]: [{ title: "", description: "", link: "", image: "" }, ...data[cat]] });
   };
 
   const removeItem = (cat: typeof categories[number], i: number) => {

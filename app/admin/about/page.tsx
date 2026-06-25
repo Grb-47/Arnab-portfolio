@@ -68,8 +68,8 @@ export default function AdminAbout() {
     setData({
       ...data,
       organizations: [
-        ...data.organizations,
         { name: "", logo: "", designations: [{ title: "", year: "" }], description: "" },
+        ...data.organizations,
       ],
     });
   };
@@ -91,7 +91,7 @@ export default function AdminAbout() {
   };
 
   const addEdu = () => {
-    setData({ ...data, education: [...data.education, { institution: "", degree: "", year: "" }] });
+    setData({ ...data, education: [{ institution: "", degree: "", year: "" }, ...data.education] });
   };
 
   const removeEdu = (i: number) => {

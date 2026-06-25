@@ -7,9 +7,11 @@ import { cn } from "@/lib/utils";
 export const TextGenerateEffect = ({
   words,
   className,
+  breakAfterIndex,
 }: {
   words: string;
   className?: string;
+  breakAfterIndex?: number;
 }) => {
   const [scope, animate] = useAnimate();
   const wordsArray = words.split(" ");
@@ -37,6 +39,7 @@ export const TextGenerateEffect = ({
               className="opacity-0"
             >
               {word}{" "}
+              {breakAfterIndex === idx && <br className="md:hidden" />}
             </motion.span>
           );
         })}

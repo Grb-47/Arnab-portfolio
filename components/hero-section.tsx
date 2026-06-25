@@ -82,14 +82,15 @@ export function HeroSection() {
 
         {/* Subtitle with Text Generate Effect */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
           className="w-full px-4 lg:max-w-4xl"
         >
           <TextGenerateEffect
             words={subtitle}
             className="text-sm sm:text-lg md:text-2xl lg:text-3xl text-gray-300 font-medium"
+            breakAfterIndex={6}
           />
           </motion.div>
 

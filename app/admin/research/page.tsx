@@ -52,7 +52,7 @@ export default function AdminResearch() {
   };
 
   const addItem = (cat: typeof categories[number]) => {
-    setData({ ...data, [cat]: [...data[cat], { image: "", thumbnail: "", category: "", title: "", shortDescription: "", description: "" }] });
+    setData({ ...data, [cat]: [{ image: "", thumbnail: "", category: "", title: "", shortDescription: "", description: "" }, ...data[cat]] });
   };
 
   const removeItem = (cat: typeof categories[number], i: number) => {

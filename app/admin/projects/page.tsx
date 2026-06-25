@@ -51,7 +51,7 @@ export default function AdminProjects() {
   };
 
   const addItem = () => {
-    setData({ ...data, items: [...data.items, { image: "", shortDescription: "", title: "", description: "", tags: [] }] });
+    setData({ ...data, items: [{ image: "", shortDescription: "", title: "", description: "", tags: [] }, ...data.items] });
   };
 
   const removeItem = (i: number) => {

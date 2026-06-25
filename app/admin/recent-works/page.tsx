@@ -47,7 +47,7 @@ export default function AdminRecentWorks() {
   };
 
   const addItem = () => {
-    setData({ ...data, items: [...data.items, { image: "", thumbnail: "", category: "", title: "", description: "" }] });
+    setData({ ...data, items: [{ image: "", thumbnail: "", category: "", title: "", description: "" }, ...data.items] });
   };
 
   const removeItem = (i: number) => {
