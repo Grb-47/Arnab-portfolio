@@ -17,6 +17,17 @@ export function ImageWithFallback({
 }: Props) {
   const [hasError, setHasError] = useState(false);
 
+  if (!src) {
+    return (
+      <Image
+        {...props}
+        src={fallback}
+        alt={alt}
+        unoptimized
+      />
+    );
+  }
+
   if (hasError) {
     return (
       <Image

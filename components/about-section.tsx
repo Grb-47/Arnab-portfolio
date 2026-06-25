@@ -119,7 +119,7 @@ export function AboutSection() {
               </button>
               <div
                 ref={scrollRef}
-                className="flex flex-nowrap gap-6 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+                className="flex flex-nowrap gap-8 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
               >
                 {organizations.map((org, index) => (
                   <motion.div
@@ -128,7 +128,7 @@ export function AboutSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="min-w-[300px] lg:min-w-0 lg:w-[calc(33.333%-1rem)] bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
+                    className="w-[320px] md:w-[350px] flex-none shrink-0 lg:min-w-0 lg:w-[calc(25%-1.5rem)] bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
                   >
                     <div className="h-16 w-16 mb-4 relative">
                       <ImageWithFallback src={org.logo} alt={org.name} width={64} height={64} className="object-contain" />
